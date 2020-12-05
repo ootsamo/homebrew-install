@@ -180,7 +180,7 @@ version_lt() {
 }
 
 should_install_command_line_tools() {
-  if [[ -n "${HOMEBREW_ON_LINUX-}" ]]; then
+  if [[ -n "${HOMEBREW_ON_LINUX-}" ]] || [[ -n "${HOMEBREW_SKIP_CLT-}" ]]; then
     return 1
   fi
 
